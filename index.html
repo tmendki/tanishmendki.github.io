@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tanish mendki's portfolio</title>
+
+    <!-- tiny, readable css -->
+    <style>
+      :root {
+        --accent: #44c0ff;   /* tweak to taste */
+        --fg: #222;
+        --bg: #ffffff;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, "segoe ui", sans-serif;
+        color: var(--fg);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+
+      /* --- layout --- */
+      header { padding: 2rem 1.5rem; }
+      nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+      nav a {
+        text-decoration: none;
+        color: var(--fg);
+        padding-bottom: .2rem;
+        position: relative;
+        font-size: 1rem;
+      }
+      nav a::after {               /* subtle hover underline */
+        content: "";
+        position: absolute;
+        left: 0; bottom: 0;
+        height: 2px; width: 0%;
+        background: var(--accent);
+        transition: width .3s;
+      }
+      nav a:hover::after,
+      nav a:focus::after { width: 100%; }
+
+      section {
+        max-width: 880px;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
+      }
+      h1 { font-size: 2rem; letter-spacing: .5px; }
+      h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: .8rem; }
+
+      /* content blocks */
+      ul { list-style: none; margin-top: 1rem; }
+      li + li { margin-top: .75rem; }
+      .card {
+        border-left: 4px solid var(--accent);
+        padding-left: .75rem;
+      }
+
+      /* responsive tweak */
+      @media (max-width: 600px) {
+        nav { gap: 1rem; font-size: .9rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- homepage header --------------------------------------------------->
+    <header>
+      <h1>tanish mendki's portfolio</h1>
+      <nav>
+        <a href="#research">research</a>
+        <a href="#projects">projects</a>
+        <a href="#experience">experience</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </header>
+
+    <!-- research ----------------------------------------------------------->
+    <section id="research">
+      <h2>research</h2>
+      <p>
+        brief overview of my work at the intersection of cognitive neuroscience and computer science,
+        focusing on visual perception, spatial attention, and machine learning methods for brain‑inspired
+        modeling.
+      </p>
+
+      <ul>
+        <li class="card">
+          mendki, t. & smith, a. (2024). *machine learning identifies perioperative blood
+          pressure thresholds associated with major cardiovascular events.* nature medicine.
+          <!-- add link to pdf / doi -->
+        </li>
+        <!-- add more papers here -->
+      </ul>
+    </section>
+
+    <!-- projects ----------------------------------------------------------->
+    <section id="projects">
+      <h2>projects</h2>
+      <ul>
+        <li class="card">
+          <strong>nfl play predictor</strong> – neural network that classifies run, pass, punt,
+          or kickoff using 10 seasons of play‑by‑play data.  
+          <a href="https://github.com/yourname/nfl-play-predictor" target="_blank">code ↗</a>
+        </li>
+        <li class="card">
+          <strong>visual search cnn analysis</strong> – probes resnet units with synthetic
+          stimuli to reveal spatial selectivity patterns; informs medical‑imaging annotation.
+        </li>
+        <!-- add more projects -->
+      </ul>
+    </section>
+
+    <!-- experience --------------------------------------------------------->
+    <section id="experience">
+      <h2>experience</h2>
+      <ul>
+        <li class="card">
+          <strong>undergraduate researcher</strong>, vision & image understanding lab, ucsb  
+          2023 – present • deep‑learning models of visual search, experiment design, data analysis in r/python
+        </li>
+        <li class="card">
+          <strong>software engineering intern</strong>, acme robotics  
+          summer 2023 • built internal tools in react & flask to visualize sensor telemetry
+        </li>
+        <!-- more roles -->
+      </ul>
+    </section>
+
+    <!-- contact ------------------------------------------------------------>
+    <section id="contact">
+      <h2>contact</h2>
+      <p>
+        email: <a href="mailto:tanish@example.com">tanish@example.com</a>  
+        github: <a href="https://github.com/yourname" target="_blank">github.com/yourname ↗</a>  
+        linkedin: <a href="https://www.linkedin.com/in/tanishmendki" target="_blank">linkedin ↗</a>
+      </p>
+    </section>
+  </body>
+</html>
