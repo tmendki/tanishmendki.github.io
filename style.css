@@ -1,0 +1,89 @@
+/* --------------------------------------
+   tanish mendki – shared site styles
+   -------------------------------------- */
+   :root {
+    --accent: #44c0ff;
+    --fg: #222;
+    --bg: #ffffff;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: system-ui, -apple-system, "segoe ui", sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  
+  /* ---------- header / nav ---------- */
+  header {
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .brand { font-size: 1.7rem; letter-spacing: .5px; }
+  
+  nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  
+  nav a, .social a {
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: .2rem;
+  }
+  
+  nav a::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0; inset-block-end: 0;
+    width: 0%; height: 2px;
+    background: var(--accent);
+    transition: width .3s;
+  }
+  nav a:hover::after, nav a:focus::after { width: 100%; }
+  
+  .social { display: flex; gap: 1rem; }
+  
+  .social svg { width: 20px; aspect-ratio: 1; fill: var(--fg); transition: fill .3s; }
+  .social a:hover svg, .social a:focus svg { fill: var(--accent); }
+  
+  /* ---------- sections ---------- */
+  section {
+    max-width: 880px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: .9rem; }
+  h3 { font-size: 1.15rem; margin-top: 1.4rem; }
+  
+  ul { list-style: none; margin-top: 1rem; }
+  li + li { margin-top: .8rem; }
+  
+  .card {
+    border-inline-start: 4px solid var(--accent);
+    padding-inline-start: .8rem;
+  }
+  
+  /* ---------- footer ---------- */
+  footer {
+    text-align: center;
+    font-size: .9rem;
+    padding: 3rem 0 2rem;
+    color: #666;
+  }
+  
+  /* ---------- responsiveness ---------- */
+  @media (max-width: 600px) {
+    nav { gap: 1rem; font-size: .9rem; }
+    .social { margin-top: 1rem; }
+    header { flex-direction: column; align-items: flex-start; }
+  }
+  

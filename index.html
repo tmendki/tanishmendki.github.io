@@ -1,141 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tanish mendki's portfolio</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tanish mendki</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <!-- tiny, readable css -->
-    <style>
-      :root {
-        --accent: #44c0ff;   /* tweak to taste */
-        --fg: #222;
-        --bg: #ffffff;
-      }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body {
-        font-family: system-ui, -apple-system, "segoe ui", sans-serif;
-        color: var(--fg);
-        background: var(--bg);
-        line-height: 1.6;
-      }
+<header>
+  <div class="brand">tanish mendki</div>
 
-      /* --- layout --- */
-      header { padding: 2rem 1.5rem; }
-      nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-      nav a {
-        text-decoration: none;
-        color: var(--fg);
-        padding-bottom: .2rem;
-        position: relative;
-        font-size: 1rem;
-      }
-      nav a::after {               /* subtle hover underline */
-        content: "";
-        position: absolute;
-        left: 0; bottom: 0;
-        height: 2px; width: 0%;
-        background: var(--accent);
-        transition: width .3s;
-      }
-      nav a:hover::after,
-      nav a:focus::after { width: 100%; }
+  <nav>
+    <a href="about.html">about</a>
+    <a href="research.html">research</a>
+    <a href="projects.html">projects</a>
+    <a href="experience.html">experience</a>
+    <a href="contact.html">contact</a>
+  </nav>
 
-      section {
-        max-width: 880px;
-        margin: 4rem auto;
-        padding: 0 1.5rem;
-      }
-      h1 { font-size: 2rem; letter-spacing: .5px; }
-      h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: .8rem; }
+  <div class="social">
+    <!-- spotify -->
+    <a href="https://open.spotify.com/user/your‑spotify‑id" target="_blank" aria-label="spotify">
+      <svg viewBox="0 0 168 168" role="img">
+        <path d="M84 0a84 84 0 100 168 84 84 0 000-168zm38.3 120.4c-1.4 2.4-4.4 3.1-6.8 1.7-18.7-11.5-42.2-14.1-70-7.6-2.7.6-5.4-1-6.1-3.7-.7-2.7 1-5.4 3.7-6.1 30.8-7 56.6-4.1 77.2 8.6 2.3 1.4 3 4.4 1.7 6.9zm9.7-20.4c-1.8 2.9-5.6 3.9-8.5 2.1-21.5-13.2-54.2-17-79.6-9.2-3.3 1-6.8-.9-7.8-4.2-1-3.3.9-6.8 4.2-7.8 30.3-9.2 66.7-5 91.5 10.4 2.9 1.8 3.9 5.6 2.1 8.7zm.8-22.4C107.9 64 67.4 62.7 41 70c-3.9 1.1-7.9-1.2-9-5.1-1.1-3.9 1.2-7.9 5.1-9C68.4 47 114.2 48.4 140.2 65.3c3.3 2.1 4.3 6.5 2.1 9.8z"/>
+      </svg>
+    </a>
+    <!-- linkedin -->
+    <a href="https://www.linkedin.com/in/tanishmendki" target="_blank" aria-label="linkedin">
+      <svg viewBox="0 0 448 512" role="img">
+        <path d="M100.3 448H7V148.9h93.3V448zM53.7 108.1C24.1 108.1 0 83.5 0 53.9 0 24.3 24.6 0 54.4 0s54.4 24.3 54.4 53.9c-.1 29.6-24.5 54.2-55.1 54.2zM447.9 448h-93V302.4c0-34.7-.7-79.2-48.1-79.2-48.2 0-55.6 37.7-55.6 76.6V448h-93.1V148.9h89.5v40.8h1.3c12.5-23.7 43-48.7 88.5-48.7 94.7 0 112.1 62.4 112.1 143.3V448z"/>
+      </svg>
+    </a>
+  </div>
+</header>
 
-      /* content blocks */
-      ul { list-style: none; margin-top: 1rem; }
-      li + li { margin-top: .75rem; }
-      .card {
-        border-left: 4px solid var(--accent);
-        padding-left: .75rem;
-      }
+<section>
+  <h2>hi, i’m tanish 👋</h2>
+  <p>
+    i’m an undergraduate researcher blending cognitive neuroscience and computer science to
+    understand how brains—and machines—see, think, and decide.  
+    currently at ucsb, i build deep‑learning models of visual search and teach a lab of ~60
+    research assistants the joys of computational neuroscience. <!-- :contentReference[oaicite:15]{index=15} -->
+  </p>
 
-      /* responsive tweak */
-      @media (max-width: 600px) {
-        nav { gap: 1rem; font-size: .9rem; }
-      }
-    </style>
-  </head>
+  <p>
+    explore the links above to dive into my work, or catch my latest playlists & papers via
+    the icons in the corner.
+  </p>
+</section>
 
-  <body>
-    <!-- homepage header --------------------------------------------------->
-    <header>
-      <h1>tanish mendki's portfolio</h1>
-      <nav>
-        <a href="#research">research</a>
-        <a href="#projects">projects</a>
-        <a href="#experience">experience</a>
-        <a href="#contact">contact</a>
-      </nav>
-    </header>
+<footer>© 2025 tanish mendki</footer>
 
-    <!-- research ----------------------------------------------------------->
-    <section id="research">
-      <h2>research</h2>
-      <p>
-        brief overview of my work at the intersection of cognitive neuroscience and computer science,
-        focusing on visual perception, spatial attention, and machine learning methods for brain‑inspired
-        modeling.
-      </p>
-
-      <ul>
-        <li class="card">
-          mendki, t. & smith, a. (2024). *machine learning identifies perioperative blood
-          pressure thresholds associated with major cardiovascular events.* nature medicine.
-          <!-- add link to pdf / doi -->
-        </li>
-        <!-- add more papers here -->
-      </ul>
-    </section>
-
-    <!-- projects ----------------------------------------------------------->
-    <section id="projects">
-      <h2>projects</h2>
-      <ul>
-        <li class="card">
-          <strong>nfl play predictor</strong> – neural network that classifies run, pass, punt,
-          or kickoff using 10 seasons of play‑by‑play data.  
-          <a href="https://github.com/yourname/nfl-play-predictor" target="_blank">code ↗</a>
-        </li>
-        <li class="card">
-          <strong>visual search cnn analysis</strong> – probes resnet units with synthetic
-          stimuli to reveal spatial selectivity patterns; informs medical‑imaging annotation.
-        </li>
-        <!-- add more projects -->
-      </ul>
-    </section>
-
-    <!-- experience --------------------------------------------------------->
-    <section id="experience">
-      <h2>experience</h2>
-      <ul>
-        <li class="card">
-          <strong>undergraduate researcher</strong>, vision & image understanding lab, ucsb  
-          2023 – present • deep‑learning models of visual search, experiment design, data analysis in r/python
-        </li>
-        <li class="card">
-          <strong>software engineering intern</strong>, acme robotics  
-          summer 2023 • built internal tools in react & flask to visualize sensor telemetry
-        </li>
-        <!-- more roles -->
-      </ul>
-    </section>
-
-    <!-- contact ------------------------------------------------------------>
-    <section id="contact">
-      <h2>contact</h2>
-      <p>
-        email: <a href="mailto:tanish@example.com">tanish@example.com</a>  
-        github: <a href="https://github.com/yourname" target="_blank">github.com/yourname ↗</a>  
-        linkedin: <a href="https://www.linkedin.com/in/tanishmendki" target="_blank">linkedin ↗</a>
-      </p>
-    </section>
-  </body>
+</body>
 </html>
