@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my work · tanish mendki</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Work page specific styles */
+    
+    /* Publications section */
+    .publications {
+      background: var(--bg-secondary);
+      padding: 3rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+    }
+
+    .publications h3 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .publication-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .publication-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .publication-item .authors {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-item .title {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+    }
+
+    .publication-item .venue {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Work page specific responsive styles */
+    @media (max-width: 768px) {
+      .publications {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand">tanish mendki</div>
+    <nav>
+      <a href="index.html">home</a>
+      <a href="work.html">my work</a>
+      <a href="experience.html">experience</a>
+    </nav>
+    <div class="social">
+      <a href="https://open.spotify.com/user/tanish" target="_blank" aria-label="spotify">
+        <svg viewBox="0 0 168 168" role="img">
+          <path d="M84 0a84 84 0 100 168 84 84 0 000-168zm38.3 120.4c-1.4 2.4-4.4 3.1-6.8 1.7-18.7-11.5-42.2-14.1-70-7.6-2.7.6-5.4-1-6.1-3.7-.7-2.7 1-5.4 3.7-6.1 30.8-7 56.6-4.1 77.2 8.6 2.3 1.4 3 4.4 1.7 6.9zm9.7-20.4c-1.8 2.9-5.6 3.9-8.5 2.1-21.5-13.2-54.2-17-79.6-9.2-3.3 1-6.8-.9-7.8-4.2-1-3.3.9-6.8 4.2-7.8 30.3-9.2 66.7-5 91.5 10.4 2.9 1.8 3.9 5.6 2.1 8.7zm.8-22.4C107.9 64 67.4 62.7 41 70c-3.9 1.1-7.9-1.2-9-5.1-1.1-3.9 1.2-7.9 5.1-9C68.4 47 114.2 48.4 140.2 65.3c3.3 2.1 4.3 6.5 2.1 9.8z"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/tanishmendki" target="_blank" aria-label="linkedin">
+        <svg viewBox="0 0 448 512" role="img">
+          <path d="M100.3 448H7V148.9h93.3V448zM53.7 108.1C24.1 108.1 0 83.5 0 53.9 0 24.3 24.6 0 54.4 0s54.4 24.3 54.4 53.9c-.1 29.6-24.5 54.2-55.1 54.2zM447.9 448h-93V302.4c0-34.7-.7-79.2-48.1-79.2-48.2 0-55.6 37.7-55.6 76.6V448h-93.1V148.9h89.5v40.8h1.3c12.5-23.7 43-48.7 88.5-48.7 94.7 0 112.1 62.4 112.1 143.3V448z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/yourname" target="_blank" aria-label="github">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="page-header">
+      <h1>my work</h1>
+      <p>
+        exploring the intersection of cognitive neuroscience and computer science through
+        research projects and technical implementations that bridge human perception and artificial intelligence
+      </p>
+    </div>
+
+    <!-- Research Section -->
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+      <h2>current research</h2>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5"/>
+          </svg>
+          <div>
+            <div class="card-title">background distractors in visual search</div>
+            <div class="card-meta">vision & image understanding lab · 2024-present</div>
+          </div>
+        </div>
+        <ul class="research-bullets">
+          <li>built a synthetic dataset generator simulating <strong>structured visual environments</strong></li>
+          <li>varied background noise & target positions across tens of thousands of images</li>
+          <li>trained & fine‑tuned models to <strong>90% human‑level accuracy</strong></li>
+          <li>discovered models <strong>over‑rely on background cues</strong>—insightful for medical‑imaging safety</li>
+          <li>pipeline implemented in pytorch, accelerated with multiprocessing & on‑GPU augmentations</li>
+        </ul>
+      </article>
+
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M9 3a3 3 0 00-3 3v1H5a3 3 0 000 6h1v2H5a3 3 0 000 6h1v1a3 3 0 003 3 3 3 0 006 0 3 3 0 003-3v-1h1a3 3 0 000-6h-1v-2h1a3 3 0 000-6h-1V6a3 3 0 00-3-3 3 3 0 10-6 0z"/>
+          </svg>
+          <div>
+            <div class="card-title">are old vision models useless?</div>
+            <div class="card-meta">independent research · 2024</div>
+          </div>
+        </div>
+        <ul class="research-bullets">
+          <li>re‑implemented <strong>classical vision models</strong> (e.g., gabor pyramids, gist, hmax) from scratch</li>
+          <li>ran a curated benchmark of natural & synthetic stimuli through each architecture</li>
+          <li>extracted layer‑wise activations and compared them to primate neural data</li>
+          <li><strong>surprise finding:</strong> certain hand‑crafted features remain highly brain‑aligned</li>
+          <li>paper draft in prep; tool released under mit license for community replication</li>
+        </ul>
+      </article>
+
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M12 2a9 9 0 00-9 9v3c0 5 4 8 9 8s9-3 9-8v-3a9 9 0 00-9-9zm0 14c-2.3 0-4-.7-5.2-2.1a1 1 0 011.5-1.3c.8.9 2 1.4 3.7 1.4s2.9-.5 3.7-1.4a1 1 0 011.5 1.3C16 15.3 14.3 16 12 16zm-3-6a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm6 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/>
+          </svg>
+          <div>
+            <div class="card-title">deceptive descriptions</div>
+            <div class="card-meta">collaborative research · 2024</div>
+          </div>
+        </div>
+        <ul class="research-bullets">
+          <li>studying how humans and llms rate <strong>"fake expertise"</strong> in everyday image captions</li>
+          <li>curated 360 images with intentionally misleading descriptions across 5 domains</li>
+          <li>collected human deceptiveness ratings; compared to gpt‑4 & llama‑3 judgments</li>
+          <li>running a follow‑up to test decision‑making under deceptive information</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section-header">
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+      </svg>
+      <h2>selected projects</h2>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <div>
+            <div class="card-title">cnn analysis of background distractors</div>
+            <div class="card-meta">urca grant funded project · 2024</div>
+          </div>
+        </div>
+        <p class="card-description">
+          synthetic image generator + model‑introspection toolbox built with pytorch, numpy, and sklearn. 
+          comprehensive analysis of how convolutional neural networks process visual search tasks with varying background complexity.
+        </p>
+        <div class="card-links">
+          <a href="#" target="_blank">view paper ↗</a>
+          <a href="#" target="_blank">code ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+          </svg>
+          <div>
+            <div class="card-title">dynamic gaze‑cueing models</div>
+            <div class="card-meta">computational modeling · 2024</div>
+          </div>
+        </div>
+        <p class="card-description">
+          bayesian ideal observer, 3d‑cnn, and drift diffusion model that replicate attentional orienting effects. 
+          comprehensive framework for understanding how gaze cues influence visual attention in dynamic scenes.
+        </p>
+        <div class="card-links">
+          <a href="#" target="_blank">demo ↗</a>
+          <a href="#" target="_blank">code ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <div>
+            <div class="card-title">classify: professor ranking app</div>
+            <div class="card-meta">full-stack development · 2023</div>
+          </div>
+        </div>
+        <p class="card-description">
+          react native mobile application with gcp nlp sentiment analysis and web‑scraping capabilities using beautifulsoup. 
+          helps students make informed decisions about course selection based on aggregated professor reviews and ratings.
+        </p>
+        <div class="card-links">
+          <a href="#" target="_blank">app store ↗</a>
+          <a href="#" target="_blank">code ↗</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="card-header">
+          <svg class="card-icon" viewBox="0 0 24 24">
+            <path d="M21 16V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM5 4h14v12H5V4z"/>
+          </svg>
+          <div>
+            <div class="card-title">nfl play predictor</div>
+            <div class="card-meta">machine learning · 2023</div>
+          </div>
+        </div>
+        <p class="card-description">
+          predicts run/pass/punt/kickoff using ten seasons of play‑by‑play data with a custom keras model. 
+          comprehensive feature engineering and model optimization for accurate real-time play prediction.
+        </p>
+        <div class="card-links">
+          <a href="https://github.com/yourname/nfl-play-predictor" target="_blank">code ↗</a>
+          <a href="#" target="_blank">demo ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Publications -->
+    <div class="publications">
+      <h3>posters & presentations</h3>
+      <div class="publication-item">
+        <div class="authors">mendki, t. & eckstein, m. (2025).</div>
+        <div class="title">humans and neural networks learn to use background structures for efficient visual search.</div>
+        <div class="venue">urca poster & oral talk</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2025 tanish mendki</footer>
+</body>
+</html>

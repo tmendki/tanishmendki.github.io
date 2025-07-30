@@ -1,89 +1,369 @@
-/* --------------------------------------
-   tanish mendki – shared site styles
-   -------------------------------------- */
-   :root {
+/* style.css - Common styles for all pages */
+
+:root {
     --accent: #4133d6;
     --fg: #222;
     --bg: #ffffff;
+    --bg-secondary: #fafafa;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --neural-color: rgba(65, 51, 214, 0.3);
   }
   
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
   
-  html { scroll-behavior: smooth; }
+  html { 
+    scroll-behavior: smooth; 
+  }
   
   body {
     font-family: system-ui, -apple-system, "segoe ui", sans-serif;
     color: var(--fg);
     background: var(--bg);
     line-height: 1.7;
+    overflow-x: hidden;
   }
   
-  /* ---------- header / nav ---------- */
+  /* ==================== HEADER STYLES ==================== */
   header {
     padding: 2rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(65, 51, 214, 0.1);
+    animation: slideDown 0.8s ease 0.3s both;
   }
   
-  .brand { font-size: 1.7rem; letter-spacing: .5px; }
+  .brand { 
+    font-size: 1.7rem; 
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
   
-  nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  nav { 
+    display: flex; 
+    gap: 2rem; 
+    flex-wrap: wrap; 
+  }
   
-  nav a, .social a {
+  nav a {
     text-decoration: none;
     color: var(--fg);
     font-size: 1rem;
     position: relative;
-    padding-bottom: .2rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
   }
   
   nav a::after {
     content: "";
     position: absolute;
-    inset-inline-start: 0; inset-block-end: 0;
-    width: 0%; height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
     background: var(--accent);
-    transition: width .3s;
-  }
-  nav a:hover::after, nav a:focus::after { width: 100%; }
-  
-  .social { display: flex; gap: 1rem; }
-  
-  .social svg { width: 20px; aspect-ratio: 1; fill: var(--fg); transition: fill .3s; }
-  .social a:hover svg, .social a:focus svg { fill: var(--accent); }
-  
-  /* ---------- sections ---------- */
-  section {
-    max-width: 880px;
-    margin: 4rem auto;
-    padding: 0 1.5rem;
+    transition: width 0.3s ease;
   }
   
-  h2 { font-size: 1.6rem; color: var(--accent); margin-bottom: .9rem; }
-  h3 { font-size: 1.15rem; margin-top: 1.4rem; }
-  
-  ul { list-style: none; margin-top: 1rem; }
-  li + li { margin-top: .8rem; }
-  
-  .card {
-    border-inline-start: 4px solid var(--accent);
-    padding-inline-start: .8rem;
+  nav a:hover::after,
+  nav a:focus::after { 
+    width: 100%; 
   }
   
-  /* ---------- footer ---------- */
+  nav a:hover {
+    color: var(--accent);
+  }
+  
+  .social { 
+    display: flex; 
+    gap: 1rem; 
+  }
+  
+  .social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .social a:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+  
+  .social svg { 
+    width: 20px; 
+    height: 20px; 
+    fill: var(--fg); 
+    transition: fill 0.3s; 
+  }
+  
+  .social a:hover svg { 
+    fill: white; 
+  }
+  
+  /* ==================== MAIN CONTENT STYLES ==================== */
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  /* ==================== SECTION HEADERS ==================== */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 2rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-secondary);
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+    color: var(--accent);
+  }
+  
+  .section-header .icon {
+    width: 30px;
+    height: 30px;
+    fill: var(--accent);
+  }
+  
+  /* ==================== CARD STYLES ==================== */
+  .work-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .work-card, .exp-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px var(--shadow);
+    border-left: 4px solid var(--accent);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .work-card:hover, .exp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(65, 51, 214, 0.15);
+  }
+  
+  .work-card::before, .exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), rgba(65, 51, 214, 0.3));
+  }
+  
+  .card-header, .role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-icon, .role-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  
+  .card-title, .role-info h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-meta, .role-meta {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-description {
+    color: var(--fg);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .card-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+  }
+  
+  .card-links a:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* ==================== BULLET LISTS ==================== */
+  .research-bullets, .bullets {
+    list-style: none;
+    margin: 1rem 0;
+  }
+  
+  .research-bullets li, .bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+  }
+  
+  .research-bullets li::before, .bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  .research-bullets strong, .bullets strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  
+  /* ==================== FOOTER ==================== */
   footer {
     text-align: center;
-    font-size: .9rem;
+    font-size: 0.9rem;
     padding: 3rem 0 2rem;
     color: #666;
+    border-top: 1px solid rgba(65, 51, 214, 0.1);
+    margin-top: 4rem;
   }
   
-  /* ---------- responsiveness ---------- */
+  /* ==================== ANIMATIONS ==================== */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ==================== RESPONSIVE DESIGN ==================== */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    nav {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .social {
+      margin-top: 1rem;
+    }
+  
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  
+    .section-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .work-card, .exp-card {
+      padding: 1.5rem;
+    }
+  
+    main {
+      padding: 2rem 1.5rem;
+    }
+  }
+  
   @media (max-width: 600px) {
-    nav { gap: 1rem; font-size: .9rem; }
-    .social { margin-top: 1rem; }
-    header { flex-direction: column; align-items: flex-start; }
-  }
+    nav {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .social {
+      margin-top: 1rem;
+    }
+    
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   
+    .card-header, .role-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .card-links {
+      flex-direction: column;
+    }
+  }
